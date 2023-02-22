@@ -27,7 +27,7 @@ CREATE TABLE [Budget] (
   [budget_name] VARCHAR(150),
   [budget_start_date] DATE,
   [budget_end_date] DATE,
-  [budget_target_amount] DECIMAL(6,2)
+  [budget_target_amount] DECIMAL(12,2)
 );
 GO
 
@@ -41,10 +41,10 @@ CREATE TABLE [Transaction] (
   [transaction_id] INT PRIMARY KEY IDENTITY(1, 1),
   [fk_budget_id] INT NOT NULL,
   [transaction_date] DATE,
-  [transaction_amount] DECIMAL(6,2),
-  [transaction_description] VARCHAR(MAX),
-  [fk_income_id] INT NOT NULL,
-  [fk_expense_id] INT NOT NULL
+  [transaction_amount] DECIMAL(12,2),
+  [transaction_description] VARCHAR(1000),
+  [fk_income_id] INT NULL,
+  [fk_expense_id] INT NULL
 );
 GO
 
@@ -60,7 +60,7 @@ CREATE TABLE [Expense] (
   [fk_tax_implication_id] INT,
   [payment_method] VARCHAR(80),
   [expense_category_name] VARCHAR(80),
-  [expense_frequency] DECIMAL(6,2)
+  [expense_frequency] DECIMAL(12,2)
 );
 GO
 
@@ -75,7 +75,7 @@ CREATE TABLE [Income] (
   [fk_tax_implication_id] INT,
   [income_source] VARCHAR(80),
   [income_category_name] VARCHAR(80),
-  [income_frequency] DECIMAL(6,2)
+  [income_frequency] DECIMAL(12,2)
 );
 GO
 

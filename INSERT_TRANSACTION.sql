@@ -48,12 +48,12 @@ USING
 				AND fk_user_id = (SELECT user_id FROM [dbo].[User] WHERE username = @WhichUser)),
 			(SELECT income_id FROM [dbo].[Income] WHERE income_category_name = @WhichIncome),
 			NULL,
-			GETDATE(), 'My Salary', 20000),
-		((SELECT budget_id FROM [dbo].[Budget] WHERE budget_name = @WhichBudget 
+			GETDATE(), 'My Salary', 200)
+		,((SELECT budget_id FROM [dbo].[Budget] WHERE budget_name = @WhichBudget 
 				AND fk_user_id = (SELECT user_id FROM [dbo].[User] WHERE username = @WhichUser)),
 			NULL,
 			(SELECT expense_id FROM [dbo].[Expense] WHERE expense_category_name = @WhichExpense),
-			GETDATE(), 'My food', 200)
+			GETDATE(), 'My food', 700)
 	)
 	AS SOURCE ([fk_budget_id]
 				,[fk_income_id]
