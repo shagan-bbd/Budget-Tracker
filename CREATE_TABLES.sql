@@ -57,10 +57,9 @@ GO
 -- Create Expense table
 CREATE TABLE [Expense] (
   [expense_id] INT PRIMARY KEY IDENTITY(1, 1),
-  [fk_tax_implication_id] INT,
-  [payment_method] VARCHAR(80),
   [expense_category_name] VARCHAR(80),
-  [expense_frequency] DECIMAL(12,2)
+  [expense_frequency] DECIMAL(12,2),
+  [payment_method] VARCHAR(80)
 );
 GO
 
@@ -72,9 +71,8 @@ GO
 -- Create Income table
 CREATE TABLE [Income] (
   [income_id] INT PRIMARY KEY IDENTITY(1, 1),
-  [fk_tax_implication_id] INT,
-  [income_source] VARCHAR(80),
   [income_category_name] VARCHAR(80),
+  [income_source] VARCHAR(80),
   [income_frequency] DECIMAL(12,2)
 );
 GO
@@ -82,17 +80,3 @@ GO
 ALTER TABLE [Transaction] ADD FOREIGN KEY ([fk_income_id]) REFERENCES [Income] ([income_id]);
 GO
 
-
-
--- Create Tax_Implication table
-CREATE TABLE [Tax_Implication] (
-  [tax_implication_id] INT PRIMARY KEY IDENTITY(1, 1),
-  [tax_implication_type] VARCHAR(80)
-);
-GO
-
-ALTER TABLE [Income] ADD FOREIGN KEY ([fk_tax_implication_id]) REFERENCES [Tax_Implication] ([tax_implication_id]);
-GO
-
-ALTER TABLE [Expense] ADD FOREIGN KEY ([fk_tax_implication_id]) REFERENCES [Tax_Implication] ([tax_implication_id]);
-GO

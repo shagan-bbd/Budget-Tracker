@@ -60,11 +60,11 @@ GO
 
 
 -- Delete Tax_Implication
-DELETE FROM [dbo].[Tax_Implication];
-GO
+--DELETE FROM [dbo].[Tax_Implication];
+--GO
 
-DBCC CHECKIDENT ('Tax_Implication', RESEED, 0);
-GO
+--DBCC CHECKIDENT ('Tax_Implication', RESEED, 0);
+--GO
 
-DROP TABLE [dbo].[Tax_Implication];
-GO
+--DROP TABLE [dbo].[Tax_Implication];
+--GO

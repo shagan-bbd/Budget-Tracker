@@ -5,7 +5,7 @@ GO
 
 -- which user_id
 DECLARE @WhichUser VARCHAR(150);
-SET @WhichUser = 'second_username';
+SET @WhichUser = 'shagan';
 -- second_username
 -- raagakrishna
 
@@ -14,7 +14,7 @@ SET @WhichUser = 'second_username';
 
 -- which budget_id 
 DECLARE @WhichBudget VARCHAR(150);
-SET @WhichBudget = 'Household';
+SET @WhichBudget = 'Vacation';
 -- Household
 -- House
 
@@ -48,7 +48,7 @@ USING
 				AND fk_user_id = (SELECT user_id FROM [dbo].[User] WHERE username = @WhichUser)),
 			(SELECT income_id FROM [dbo].[Income] WHERE income_category_name = @WhichIncome),
 			NULL,
-			GETDATE(), 'My Salary', 200)
+			GETDATE(), 'My Salary', -200)
 		,((SELECT budget_id FROM [dbo].[Budget] WHERE budget_name = @WhichBudget 
 				AND fk_user_id = (SELECT user_id FROM [dbo].[User] WHERE username = @WhichUser)),
 			NULL,
