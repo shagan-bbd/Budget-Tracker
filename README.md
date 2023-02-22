@@ -11,4 +11,4 @@ SQL Database for a Budget Tracking Program.
 If you ever what to restart (i.e, delete all records and drop the tables), execute the DROP_TABLES.sql.
 
 Note: 
-* All STORED_PROC_* files first drop the stored proc, then create it again. 
+* All STORED_PROC_*.sql files first drop the stored proc, then create it again. 
