@@ -1,5 +1,5 @@
 --script creates stored procedure to insert user into the database 
-USE BudgetTrackingAppFinal;
+USE BudgetTrackingDB;
 GO
 
 
@@ -7,10 +7,13 @@ DROP PROCEDURE  IF EXISTS [dbo].[AddPeriods];
 GO
 
 CREATE PROCEDURE [dbo].[AddPeriods] (
-		@Fk_userId INT,@StartDate DATE,@Frequency INT 
+		@Fk_userId INT,
+		@StartDate DATE,
+		@Frequency INT 
 	)
 AS
 BEGIN
+
 	MERGE [Periods] AS TARGET
 	USING (
 		SELECT @Fk_userId as [fk_userId]
