@@ -23,8 +23,6 @@ CREATE TABLE [Budget] (
   [budget_id] INT PRIMARY KEY IDENTITY(1, 1),
   [fk_user_id] INT NOT NULL,
   [budget_name] VARCHAR(150),
-  --[budget_start_date] DATE NULL,
-  --[budget_end_date] DATE NULL,
   [budget_target_amount] DECIMAL(12,2) DEFAULT NULL,
   [budget_trigger_reference] VARCHAR(150)
 )
@@ -36,15 +34,19 @@ GO
 
 CREATE TABLE [Transaction] (
   [transaction_id] INT PRIMARY KEY IDENTITY(1, 1),
-  [fk_budget_id] INT NOT NULL,
+  [fk_budget_id] INT NULL,
+  [fk_user_id] INT NOT NULL,
   [transaction_date] DATE,
   [transaction_amount] DECIMAL(12,2),
-  [transaction_reference] VARCHAR(150),
-  [transaction_3rdparty] INT
+  [transaction_reference] VARCHAR(35),
+  [transaction_3rdparty] VARCHAR(150)
 )
 GO
 
 ALTER TABLE [Transaction] ADD FOREIGN KEY ([fk_budget_id]) REFERENCES [Budget] ([budget_id])
+GO
+
+ALTER TABLE [Transaction] ADD FOREIGN KEY ([fk_user_id]) REFERENCES [User] ([user_id])
 GO
 
 
