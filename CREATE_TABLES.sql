@@ -21,7 +21,6 @@ CREATE TABLE [ExpenseLabel] (
   [expense_label_id] INT PRIMARY KEY IDENTITY(1, 1),
   [fk_user_id] INT,
   [expense_label] VARCHAR(150),
-  [expense_sub_label] VARCHAR(150),
   [expense_label_limit] DECIMAL(12,2),
   [expense_label_start_date] DATE,
   [expense_label_end_date] DATE
