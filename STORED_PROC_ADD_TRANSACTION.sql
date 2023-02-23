@@ -1,7 +1,7 @@
 USE BudgetTrackingAppFinal;
 GO
 
-DROP PROCEDURE [dbo].[AddTransaction];
+DROP PROCEDURE IF EXISTS  [dbo].[AddTransaction];
 GO
 
 CREATE PROCEDURE [dbo].[AddTransaction] (
