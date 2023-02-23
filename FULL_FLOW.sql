@@ -13,7 +13,7 @@ SET @WhichUser = 'raagakrishna';
 --DECLARE @WhichUser2 VARCHAR(150);
 --SET @WhichUser2 = 'shagan';
 
-SELECT * FROM [dbo].[User];
+--SELECT * FROM [dbo].[User];
 
 -- create a user 
 EXEC [dbo].[MergeUser] 
@@ -31,10 +31,10 @@ EXEC [dbo].[MergeUser]
 
 SELECT * FROM [dbo].[User];
 
-SELECT * FROM [dbo].[Budget];
+--SELECT * FROM [dbo].[Budget];
 
 DECLARE @WhichBudget VARCHAR(150);
-SET @WhichBudget = 'Personal Expenses';
+SET @WhichBudget = 'Vacation';
 
 -- create a budget 
 EXEC [dbo].[AddBudget]
@@ -68,17 +68,29 @@ EXEC [dbo].[AddBudget]
 SELECT * FROM [dbo].[Budget];
 
 -- insert trasactions (inserts income and expense)
-SELECT * FROM [dbo].[Income];
-SELECT * FROM [dbo].[Expense];
-SELECT * FROM [dbo].[Transaction];
+--SELECT * FROM [dbo].[Income];
+--SELECT * FROM [dbo].[Expense];
+--SELECT * FROM [dbo].[Transaction];
 
 EXEC [dbo].[InsertTransaction]
 	@Username = @WhichUser,
 	@BudgetName = @WhichBudget, 
-	@TransactionDescription = 'My transaction expense', 
-	@TransactionAmount  = -300, 
+	@TransactionDescription = 'Free trip', 
+	@TransactionAmount  = 20000, 
 	@TransactionDate = '2020-09-09';
 
 SELECT * FROM [dbo].[Income];
 SELECT * FROM [dbo].[Expense];
 SELECT * FROM [dbo].[Transaction];
+
+--SELECT SUM(transaction_amount) FROM [dbo].[Transaction] 
+--WHERE fk_budget_id = (SELECT;
+
+SELECT b.budget_name, b.budget_target_amount,
+		SUM(t.transaction_amount) as transactionamount,
+		(b.budget_target_amount - SUM(t.transaction_amount)) as differenceamount
+FROM [dbo].[Budget] as b
+LEFT JOIN [dbo].[Transaction] t on t.[fk_budget_id] = b.[budget_id]
+GROUP BY b.budget_name, t.transaction_date, b.budget_target_amount
+
+
