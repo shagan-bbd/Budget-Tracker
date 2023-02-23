@@ -19,7 +19,7 @@ BEGIN
 		SELECT @Username as [username]
 				, @Password as [password]
 				, @Email as [email]
-				, @FullName as [fuull_name]
+				, @FullName as [full_name]
 	)
 	AS SOURCE 
 	ON (TARGET.username = SOURCE.username)
