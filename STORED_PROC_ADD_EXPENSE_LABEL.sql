@@ -1,8 +1,8 @@
 USE ExpenseTracker;
 GO
 
---DROP PROCEDURE [dbo].[AddExpenseLabel];
---GO
+DROP PROCEDURE [dbo].[AddExpenseLabel];
+GO
 
 CREATE PROCEDURE [dbo].[AddExpenseLabel] (
 		@Username nvarchar(150), 
