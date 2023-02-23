@@ -5,27 +5,35 @@ DROP PROCEDURE IF EXISTS [dbo].[AddBudget];
 GO
 
 CREATE PROCEDURE [dbo].[AddBudget] (
-		@Email VARCHAR(150), 
-		@BudgetName VARCHAR(150),
-		@BudgetLimit VARCHAR(150)
+		@email varchar(150), 
+		@budgetName varchar(150),
+		@budgetLimit VARCHAR(150)
 	)
 AS
 BEGIN
-	DECLARE @Fk_userId INT;
-	DECLARE @Fk_periodID INT;
-	SET @Fk_userId = (SELECT userId FROM [dbo].[Users] WHERE userEmail = @Email);
-	SET @fk_periodID = (SELECT periodId FROM [dbo].[Periods] WHERE fk_userId = @Fk_userId);
+	DECLARE @fk_userId INT;
+	DECLARE @fk_periodID INT;
+	SET @fk_userId = (SELECT userId FROM [dbo].[User] WHERE userEmail = @email);
+	SET @fk_periodID = (SELECT periodId FROM [dbo].[Periods] WHERE fk_userId = @fk_userId);
 
-	INSERT INTO [Budget]
-				( [fk_userId]
-				, [fk_periodID]
-				, [budgetName]
-				, [budgetLimit]
-				)
-	VALUES (  @Fk_userId
-			, @Fk_periodID
-			, 	@BudgetName 
-			, @BudgetLimit
-	);
+	IF EXISTS (select budgetName from Budget where [budgetName]=@budgetName)
+	BEGIN
+		UPDATE [Budget]
+			SET [budgetLimit] = @budgetLimit
+	END
+	ELSE
+	BEGIN
+		INSERT INTO [Budget]
+					( [fk_userId]
+					, [fk_periodID]
+					, [budgetName]
+					, [budgetLimit]
+					)
+		VALUES (  @fk_userId
+				, @fk_periodID
+				, @budgetName
+				, @budgetLimit
+		)
+	END
 END;
 GO
