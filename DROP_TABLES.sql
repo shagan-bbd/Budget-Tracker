@@ -47,16 +47,6 @@ DROP TABLE [dbo].[Budget];
 GO
 
 
--- Delete Budget_Category table
-DELETE FROM [dbo].[Budget_Category];
-GO
-
-DBCC CHECKIDENT ('Budget_Category', RESEED, 0);
-GO
-
-DROP TABLE [dbo].[Budget_Category];
-GO
-
 
 -- Delete User table
 DELETE FROM [dbo].[User];

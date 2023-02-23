@@ -12,6 +12,7 @@ CREATE PROCEDURE [dbo].[AddUser] (
 	)
 AS
 BEGIN
+	-- insert user 
 	MERGE [User] AS TARGET
 	USING (
 		SELECT @Username as [username]
@@ -29,5 +30,26 @@ BEGIN
 		INSERT ([username], [password], [email], [full_name])
 		VALUES (@Username, @Password, @Email, @FullName
 	);
+
+	-- insert 4 budgets 
+	EXEC [dbo].[AddBudget] 
+		@Username = @Username,
+		@BudgetName = 'Transport',
+		@BudgetTriggerReference = 'Fare';
+
+	EXEC [dbo].[AddBudget] 
+		@Username = @Username,
+		@BudgetName = 'Household',
+		@BudgetTriggerReference = 'Groceries';
+
+	EXEC [dbo].[AddBudget] 
+		@Username = @Username,
+		@BudgetName = 'Savings',
+		@BudgetTriggerReference = 'Investment';
+
+	EXEC [dbo].[AddBudget] 
+		@Username = @Username,
+		@BudgetName = 'Food',
+		@BudgetTriggerReference = 'Restaurant';
 END;
 GO

@@ -9,6 +9,7 @@ DECLARE @WhichUser2 VARCHAR(150);
 SET @WhichUser2 = 'shagan';
 
 SELECT * FROM [dbo].[User];
+SELECT * FROM [dbo].[Budget];
 
 -- create a user 
 EXEC [dbo].[AddUser] 
@@ -24,3 +25,4 @@ EXEC [dbo].[AddUser]
 	@FullName = 'Shagan Plaatjies';
 
 SELECT * FROM [dbo].[User];
+SELECT * FROM [dbo].[Budget];
