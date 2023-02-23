@@ -7,7 +7,7 @@ GO
 CREATE PROCEDURE [dbo].[AddTransaction] (
 		@Fk_budgetId INT,
 		@Fk_userId INT, 
-        @TransactionAmount DECIMAL(12,2)
+        @TransactionAmount DECIMAL(12,2),
 		@TransactionDate DATE, 
 		@TransactionReference VARCHAR(32),
         @Deleted BIT

@@ -13,7 +13,7 @@ AS
 BEGIN
 	DECLARE @Fk_userId INT;
 	DECLARE @Fk_periodID INT;
-	SET @Fk_userId = (SELECT userId FROM [dbo].[User] WHERE userEmail = @Email);
+	SET @Fk_userId = (SELECT userId FROM [dbo].[Users] WHERE userEmail = @Email);
 	SET @fk_periodID = (SELECT periodId FROM [dbo].[Periods] WHERE fk_userId = @Fk_userId);
 
 	INSERT INTO [Budget]
