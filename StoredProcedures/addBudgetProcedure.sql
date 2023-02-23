@@ -5,16 +5,16 @@ DROP PROCEDURE IF EXISTS [dbo].[AddBudget];
 GO
 
 CREATE PROCEDURE [dbo].[AddBudget] (
-		@email varchar(150), 
-		@budgetName varchar(150),
-		@budgetLimit VARCHAR(150)
+		@Email VARCHAR(150), 
+		@BudgetName VARCHAR(150),
+		@BudgetLimit VARCHAR(150)
 	)
 AS
 BEGIN
-	DECLARE @fk_userId INT;
-	DECLARE @fk_periodID INT;
-	SET @fk_userId = (SELECT userId FROM [dbo].[User] WHERE userEmail = @email);
-	SET @fk_periodID = (SELECT periodId FROM [dbo].[Periods] WHERE fk_userId = @fk_userId);
+	DECLARE @Fk_userId INT;
+	DECLARE @Fk_periodID INT;
+	SET @Fk_userId = (SELECT userId FROM [dbo].[User] WHERE userEmail = @Email);
+	SET @fk_periodID = (SELECT periodId FROM [dbo].[Periods] WHERE fk_userId = @Fk_userId);
 
 	INSERT INTO [Budget]
 				( [fk_userId]
@@ -22,10 +22,10 @@ BEGIN
 				, [budgetName]
 				, [budgetLimit]
 				)
-	VALUES (  @fk_userId
-			, @fk_periodID
-			, @budgetName
-			, @budgetLimit
+	VALUES (  @Fk_userId
+			, @Fk_periodID
+			, 	@BudgetName 
+			, @BudgetLimit
 	);
 END;
 GO
