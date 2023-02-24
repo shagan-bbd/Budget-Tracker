@@ -11,8 +11,8 @@ The user enters the frequency; if 1 is selected then the budget is only for that
 > - then from there all Transactions that have that trigger word, they will be categorized as being under that Budget. 
 
 ## ERD
-![Image]("https://imgur.com/a/CJnAiwP")
-![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
+![Image](https://imgur.com/a/CJnAiwP)
+![This is an image](https://imgur.com/KVnqc6U)
 
 
-**Group members* : Michael Coker, Mmasehume Raphiri, Raaga Krishna Velthapu,  Shagan Plaatjies
+**Group members** : Michael Coker, Mmasehume Raphiri, Raaga Krishna Velthapu,  Shagan Plaatjies
