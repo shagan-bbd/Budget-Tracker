@@ -67,7 +67,7 @@ GO
 ALTER TABLE [Budget] ADD FOREIGN KEY ([fk_periodId]) REFERENCES [Periods] ([periodId])
 GO
 
-CREATE TABLE [Transaction] (
+CREATE TABLE [Transactions] (
   [transactionId] INT IDENTITY(1,1) NOT NULL,
   [fk_budgetId] INT NOT NULL,
   [fk_userId] INT NOT NULL,
