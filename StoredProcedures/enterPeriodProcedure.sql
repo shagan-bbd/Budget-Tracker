@@ -7,26 +7,26 @@ DROP PROCEDURE  IF EXISTS [dbo].[AddPeriods];
 GO
 
 CREATE PROCEDURE [dbo].[AddPeriods] (
-		@Fk_userId INT,
-		@StartDate DATE,
-		@Frequency INT 
+		@fk_userId INT,
+		@startDate DATE,
+		@frequency INT 
 	)
 AS
 BEGIN
 
 	MERGE [Periods] AS TARGET
 	USING (
-		SELECT @Fk_userId as [fk_userId]
-				, @StartDate as [startDate]
-				, @Frequency as [frequency]
+		SELECT @fk_userId as [fk_userId]
+				, @startDate as [startDate]
+				, @frequency as [frequency]
 	)
 	AS SOURCE 
 	ON (TARGET.fk_userId = SOURCE.fk_userId)
 	WHEN MATCHED THEN 
-		UPDATE SET [startDate] = @StartDate
-				, [frequency] = @Frequency
+		UPDATE SET [startDate] = @startDate
+				, [frequency] = @frequency
 	WHEN NOT MATCHED THEN
 		INSERT ([fk_userId],[startDate],  [frequency])
-		VALUES (@Fk_userId , @StartDate, @Frequency);
+		VALUES (@fk_userId , @startDate, @frequency);
 END
 
