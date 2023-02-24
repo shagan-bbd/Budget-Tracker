@@ -81,9 +81,9 @@ CREATE TABLE [Transactions] (
 	)
 )
 GO
-ALTER TABLE [Transaction] ADD FOREIGN KEY ([fk_userId]) REFERENCES [Users] ([userId])
+ALTER TABLE [Transactions] ADD FOREIGN KEY ([fk_userId]) REFERENCES [Users] ([userId])
 GO
-ALTER TABLE [Transaction] ADD FOREIGN KEY ([fk_budgetId]) REFERENCES [Budget] ([budgetId])
+ALTER TABLE [Transactions] ADD FOREIGN KEY ([fk_budgetId]) REFERENCES [Budget] ([budgetId])
 GO
 
 
