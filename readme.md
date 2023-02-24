@@ -8,11 +8,11 @@ The user enters the frequency; if 1 is selected then the budget is only for that
 > - Then the User will enter the date they want the budget to start and how frequent they want the budget to repeat, this would be an insert in the Period table.
 > - Then a user will enter what triggers they want to be used to identify transactions falling under that Budget, so an insert into the BudgetSetting table.
 > - Then they will "upload" a bank statement with transactions, so an insert into the Transaction table.
-> - Then from there all Transactions that have that trigger word, they will be categorized as being under that Budget. 
+> - then from there all Transactions that have that trigger word, they will be categorized as being under that Budget. 
 
 ## ERD
 ![Image]("./Images/FinalERD.png")
 
 
 
-**Group members** : Michael Coker, Mmasehume Raphiri, Raaga Krishna Velthapu,  Shagon Plaatjies
+**Group members* : Michael Coker, Mmasehume Raphiri, Raaga Krishna Velthapu,  Shagon Plaatjies
