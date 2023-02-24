@@ -8,9 +8,9 @@ CREATE DATABASE BudgetTrackingDB;
 GO
 
 USE BudgetTrackingDB;
-GO
+GO  
 
-CREATE TABLE [User] (
+CREATE TABLE [Users] (
   [userId] INT IDENTITY(1,1) NOT NULL,
   [userEmail] VARCHAR(320)
   CONSTRAINT [PK_User] PRIMARY KEY CLUSTERED
@@ -32,7 +32,7 @@ CREATE TABLE [Budget] (
 	)
 )
 GO
-ALTER TABLE [Budget] ADD FOREIGN KEY ([fk_userId]) REFERENCES [User] ([userId])
+ALTER TABLE [Budget] ADD FOREIGN KEY ([fk_userId]) REFERENCES [Users] ([userId])
 GO
 
 CREATE TABLE [BudgetSetting] (
@@ -48,7 +48,7 @@ CREATE TABLE [BudgetSetting] (
 GO
 ALTER TABLE [BudgetSetting] ADD FOREIGN KEY ([fk_budgetId]) REFERENCES [Budget] ([budgetId])
 GO
-ALTER TABLE [BudgetSetting] ADD FOREIGN KEY ([fk_userId]) REFERENCES [User] ([userId])
+ALTER TABLE [BudgetSetting] ADD FOREIGN KEY ([fk_userId]) REFERENCES [Users] ([userId])
 GO
 
 CREATE TABLE [Periods] (
@@ -62,7 +62,7 @@ CREATE TABLE [Periods] (
 	)
 )
 GO
-ALTER TABLE [Periods] ADD FOREIGN KEY ([fk_userId]) REFERENCES [User] ([userId])
+ALTER TABLE [Periods] ADD FOREIGN KEY ([fk_userId]) REFERENCES [Users] ([userId])
 GO
 ALTER TABLE [Budget] ADD FOREIGN KEY ([fk_periodId]) REFERENCES [Periods] ([periodId])
 GO
@@ -81,7 +81,7 @@ CREATE TABLE [Transaction] (
 	)
 )
 GO
-ALTER TABLE [Transaction] ADD FOREIGN KEY ([fk_userId]) REFERENCES [User] ([userId])
+ALTER TABLE [Transaction] ADD FOREIGN KEY ([fk_userId]) REFERENCES [Users] ([userId])
 GO
 ALTER TABLE [Transaction] ADD FOREIGN KEY ([fk_budgetId]) REFERENCES [Budget] ([budgetId])
 GO

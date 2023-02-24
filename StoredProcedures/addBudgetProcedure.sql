@@ -13,15 +13,10 @@ AS
 BEGIN
 	DECLARE @fk_userId INT;
 	DECLARE @fk_periodID INT;
-	SET @fk_userId = (SELECT userId FROM [dbo].[User] WHERE userEmail = @userEmail);
+	SET @fk_userId = (SELECT userId FROM [dbo].[Users] WHERE userEmail = @email);
+	SET @fk_periodID = (SELECT periodId FROM [dbo].[Periods] WHERE fk_userId = @fk_userId);
 
-	IF EXISTS (select budgetName from Budget where [budgetName]=@budgetName)
-	AND EXISTS (select budgetName from Budget where [budgetName]=@budgetName)
-	BEGIN
-		UPDATE [Budget]
-			SET [budgetLimit] = @budgetLimit
-	END
-	ELSE
+	
 	BEGIN
 		INSERT INTO [Budget]
 					( [fk_userId]

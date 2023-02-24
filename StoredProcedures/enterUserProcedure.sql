@@ -12,12 +12,12 @@ CREATE PROCEDURE [dbo].[AddUser] (
 AS
 BEGIN
 	-- insert user 
-	MERGE [User] AS TARGET
+	MERGE [Users] AS TARGET
 	USING (
 		SELECT @userEmail as [userEmail]	
 	)
 	AS SOURCE 
-	ON (TARGET.email = SOURCE.email)
+	ON (TARGET.userEmail = SOURCE.userEmail)
 	WHEN NOT MATCHED THEN
 		INSERT ([userEmail])
 		VALUES (@userEmail);
