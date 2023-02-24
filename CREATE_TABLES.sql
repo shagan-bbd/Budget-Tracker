@@ -39,7 +39,7 @@ CREATE TABLE [BudgetSetting] (
   [budgetSettingId] INT IDENTITY(1,1) NOT NULL,
   [fk_budgetId] INT  NOT NULL,
   [fk_userId] INT  NOT NULL,
-  [budgetTrigger] VARCHAR(32)  NOT NULL,
+  [budgetTrigger] VARCHAR(150)  NOT NULL,
   CONSTRAINT [PK_BudgetSetting] PRIMARY KEY CLUSTERED
 	(
 		[budgetSettingId] ASC
