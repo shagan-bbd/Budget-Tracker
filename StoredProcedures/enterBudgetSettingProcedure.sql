@@ -1,3 +1,8 @@
+USE BudgetTrackingDB;
+GO
+
+DROP PROCEDURE IF EXISTS [dbo].[AddBudgetSetting];
+GO
 
 CREATE PROCEDURE [dbo].[AddBudgetSetting] (
         @fk_budgetId INT,
