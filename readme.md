@@ -12,7 +12,7 @@ The user enters the frequency; if 1 is selected then the budget is only for that
 
 ## ERD
 ![Image]("https://imgur.com/a/CJnAiwP")
-
+![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
 
 
 **Group members* : Michael Coker, Mmasehume Raphiri, Raaga Krishna Velthapu,  Shagan Plaatjies
