@@ -15,7 +15,7 @@ BEGIN
 		MERGE [Budget] AS TARGET
 	USING (
 		SELECT @fk_userId as [fk_userId]
-				, @fk_periodID as [periodId]
+				, @fk_periodID as [fk_periodId]
 				, @budgetLimit as [budgetLimit]
 				, @budgetName as [budgetName]
 	)
@@ -24,7 +24,7 @@ BEGIN
 		WHEN MATCHED THEN 
 		UPDATE SET budgetLimit = @budgetLimit 
 		WHEN NOT MATCHED THEN
-			INSERT ([fk_userId],[periodId],[budgetLimit],[budgetName])
+			INSERT ([fk_userId],[fk_periodId],[budgetLimit],[budgetName])
 			VALUES (@fk_userId , @fk_periodID,@budgetLimit,@budgetName);
 END;
 GO

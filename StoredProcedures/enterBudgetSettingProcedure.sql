@@ -2,7 +2,7 @@
 CREATE PROCEDURE [dbo].[AddBudgetSetting] (
         @fk_budgetId INT,
 		@fk_userId INT,
-		@budgetTrigger VARCHAR(150),
+		@budgetTrigger VARCHAR(150)
 	)
 AS
 BEGIN
