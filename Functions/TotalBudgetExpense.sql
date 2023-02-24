@@ -22,3 +22,9 @@ BEGIN
 END
 
 GO
+
+SELECT [dbo].[udfTotalExpenses ]
+(
+	2,
+	'TakeAway'
+)
