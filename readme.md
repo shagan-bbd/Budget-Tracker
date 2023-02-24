@@ -11,7 +11,7 @@ The user enters the frequency; if 1 is selected then the budget is only for that
 > - then from there all Transactions that have that trigger word, they will be categorized as being under that Budget. 
 
 ## ERD
-![Image]("./Images/FinalERD.png")
+![Image]("https://github.com/shagan-bbd/Budget-Tracker/blob/977dfee6811725a3ca6fa08b237841fcf877bc80/Images/FinalERD.png")
 
 
 
