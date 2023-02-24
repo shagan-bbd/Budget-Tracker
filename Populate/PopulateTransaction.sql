@@ -6,5 +6,3 @@ EXEC [dbo].[AddTransaction]
         @TransactionAmount = 80,
 		@TransactionDate = '2023-03-01', 
 		@TransactionReference= "Gautrain Payment",
-        @Deleted =0
-	
