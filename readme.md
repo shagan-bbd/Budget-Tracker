@@ -15,4 +15,4 @@ The user enters the frequency; if 1 is selected then the budget is only for that
 
 
 
-**Group members* : Michael Coker, Mmasehume Raphiri, Raaga Krishna Velthapu,  Shagon Plaatjies
+**Group members* : Michael Coker, Mmasehume Raphiri, Raaga Krishna Velthapu,  Shagan Plaatjies
