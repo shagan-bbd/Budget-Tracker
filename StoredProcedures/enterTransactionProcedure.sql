@@ -14,7 +14,7 @@ CREATE PROCEDURE [dbo].[AddTransaction] (
 	)
 AS
 BEGIN
-	INSERT INTO [Transaction]
+	INSERT INTO [Transactions]
 				( [fk_budgetId]
 				, [fk_userId] 
 				, [transactionAmount]
