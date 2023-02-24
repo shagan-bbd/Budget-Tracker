@@ -1,10 +1,2 @@
 EXEC [dbo].[AddUser] @UserEmail = 'jane.doe@example.com';
 EXEC [dbo].[AddUser] @UserEmail = 'john.smith@example.com';
-EXEC [dbo].[AddUser] @UserEmail = 'jessica.wang@example.com';
-EXEC [dbo].[AddUser] @UserEmail = 'jacob.jones@example.com';
-EXEC [dbo].[AddUser] @UserEmail = 'emily.nguyen@example.com';
-EXEC [dbo].[AddUser] @UserEmail = 'william.garcia@example.com';
-EXEC [dbo].[AddUser] @UserEmail = 'samantha.chan@example.com';
-EXEC [dbo].[AddUser] @UserEmail = 'andrew.liu@example.com';
-EXEC [dbo].[AddUser] @UserEmail = 'olivia.brown@example.com';
-EXEC [dbo].[AddUser] @UserEmail = 'matthew.kim@example.com';
