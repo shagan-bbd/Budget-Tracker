@@ -2,12 +2,11 @@
 USE BudgetTrackingDB;
 GO
 
-
 DROP PROCEDURE  IF EXISTS [dbo].[AddUser];
 GO
 
 CREATE PROCEDURE [dbo].[AddUser] (
-		@userEmail varchar(320), 
+		@userEmail varchar(320) 
 	)
 AS
 BEGIN
